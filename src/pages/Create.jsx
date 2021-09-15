@@ -29,7 +29,7 @@ export default function Create() {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState(null);
   const [nameError, setNameError] = useState(false);
   const [descriptionError, setDescriptionError] = useState(false);
   const [priceError, setPriceError] = useState(false);
@@ -59,7 +59,7 @@ export default function Create() {
     if (price === null) {
       setPriceError(true);
     }
-    if (name && description) {
+    if (name && description && price) {
       fetch("http://localhost:8000/products", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -108,6 +108,7 @@ export default function Create() {
           className={classes.field}
           onChange={(e) => setPrice(e.target.value)}
           label="Price"
+          type="number"
           variant="outlined"
           color="secondary"
           fullWidth

@@ -3,7 +3,7 @@ import Categories from './pages/Categories';
 import Create from './pages/Create';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core';
-import { purple } from '@material-ui/core/colors'
+// import { purple } from '@material-ui/core/colors'
 import Layout from './components/Layout'
 
 const theme = createTheme({
@@ -11,7 +11,7 @@ const theme = createTheme({
     primary: {
       main: '#fefefe'
     },
-    secondary: purple
+    // secondary: purple
   },
   typography: {
     fontFamily: 'Quicksand',

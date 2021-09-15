@@ -9,7 +9,7 @@ export default function Products() {
   useEffect(() => {
     fetch('http://localhost:8000/products')
       .then(res => res.json())
-      .then(data => setProducts(data))
+      .then(data => setProducts(data.sort((a, b) => a.id < b.id ? 1:-1)))
   }, [])
 
   const handleDelete = async (id) => {
